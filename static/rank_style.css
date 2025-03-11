@@ -1,0 +1,102 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: rgb(20, 20, 40);
+    margin: 0;
+    padding: 0;
+}
+
+.rank-container {
+    max-width: 700px;
+    margin: 50px auto;
+    padding: 20px 30px;
+    background: linear-gradient(145deg, #f9f9f9, #e8e8e8);
+    border-radius: 15px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2), -5px -5px 15px rgba(255, 255, 255, 0.7);
+    text-align: center;
+    animation: fadeIn 0.8s ease;
+}
+
+.rank-container h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: rgb(80, 40, 20);
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+#rankList {
+    list-style: none;
+    padding: 0;
+}
+
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+th, td {
+    border: none;
+    padding: 15px;
+    text-align: center;
+    font-size: 1em;
+    color: rgb(50, 50, 50);
+}
+
+th {
+    background-color: rgb(205, 133, 63); /* Cam đất */
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+td {
+    background-color: rgb(250, 240, 230); /* Màu nâu nhạt */
+}
+
+tr:nth-child(even) td {
+    background-color: rgb(245, 235, 220); /* Màu khác cho hàng chẵn */
+}
+
+tr:hover td {
+    background-color: rgb(222, 184, 135); /* Hiệu ứng hover */
+    color: rgb(50, 20, 10); /* Đổi màu chữ khi hover */
+    transition: 0.3s;
+}
+
+.menu-button {
+    display: inline-block;
+    background-color: rgb(205, 133, 63); /* Cam đất */
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2em;
+    cursor: pointer;
+    margin-top: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.menu-button:hover {
+    background-color: rgb(160, 82, 45); /* Sienna */
+    transform: translateY(-3px);
+}
+
+/* Animation for container */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

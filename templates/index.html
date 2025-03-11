@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game 2048</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+<body>
+    <div class="menu-screen">
+        <div class="button-container">
+            <button id="playGame" class="menu-button">Play</button>
+            <button id="rank" class="menu-button">Ratings</button>
+        </div>
+    </div>
+
+    <div class="username-container" style="display: none;">
+        <label for="username">Enter name</label>
+        <input type="text" id="username" placeholder="Your name" class="username-input">
+        <button id="startGame" class="menu-button">Start</button>
+    </div>
+
+    <div class="game-container" style="display: none;">
+        <div id="score">Score: 0</div>
+        <div id="board"></div>
+        <button id="newGame" class="menu-button">New Game</button>
+        <button id="backToMenu" class="menu-button">Back</button>
+    </div>
+
+    <div id="gameOverMessage" style="display: none;">
+        <h2>Game Over!</h2>
+        <p>Your score: <span id="finalScore"></span></p>
+        <button id="replayButton" class="menu-button">Replay</button>
+    </div>
+</body>
+</html>

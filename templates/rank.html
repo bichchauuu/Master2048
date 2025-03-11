@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ratings</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='rank_style.css') }}">
+</head>
+<body>
+    <div class="rank-container">
+        <h1>Ratings</h1>
+
+        <table>
+        <thead>
+            <tr>
+                <th>Rank</th>
+                <th>User name</th>
+                <th>Score</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for player in ranks %}
+            <tr>
+                <td>{{ loop.index }}</td> <!-- Vị trí (1, 2, 3, ...) -->
+                <td>{{ player['username'] }}</td> <!-- Tên người chơi -->
+                <td>{{ player['score'] }}</td> <!-- Điểm -->
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+        <button id="backToMenu" class="menu-button">Back</button>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $('#backToMenu').click(function() {
+            window.history.back();
+        });
+    </script>
+</body>
+</html>

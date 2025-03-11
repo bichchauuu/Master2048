@@ -1,0 +1,6 @@
+Client (Trình duyệt):
+File script.js gửi các yêu cầu API như /new_game và /move/<direction>.
+JavaScript hiển thị giao diện người chơi, cập nhật bảng trò chơi.
+Server (Flask):
+File app.py xử lý các yêu cầu API từ Client, thực hiện logic trò chơi, và trả về JSON.
+

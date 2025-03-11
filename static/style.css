@@ -1,0 +1,193 @@
+/* Tổng quan body */
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-image: url('assets/images/bg2048.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+}
+
+/* Tiêu đề game */
+.game-title {
+    font-size: 2.5em;
+    color: rgb(102, 51, 0); /* Nâu đậm */
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* Container hình ảnh */
+.logo-container,
+.hinh-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
+/* Hình ảnh lớn (trên) */
+.hinh-container img {
+    width: 400px; /* Tăng kích thước lên còn 400px */
+    height: auto;
+    border-radius: 10px; /* Bo góc nhẹ */
+    border: none; /* Loại bỏ viền */
+    box-shadow: none; /* Loại bỏ hoàn toàn đổ bóng */
+    object-fit: contain; /* Cân chỉnh hình ảnh */
+}
+
+/* Hình ảnh nhỏ (dưới) */
+.logo-container img {
+    width: 180px; /* Giữ kích thước nhỏ hơn */
+    height: auto;
+    border-radius: 8px; /* Bo góc nhẹ */
+    border: none; /* Loại bỏ viền */
+    box-shadow: none; /* Loại bỏ đổ bóng cho hình dưới */
+    object-fit: contain; /* Cân chỉnh hình ảnh */
+}
+
+/* Container nút menu */
+.button-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Tự xuống dòng nếu không đủ chỗ */
+    margin-top: 520px;
+}
+
+/* Nút menu */
+.menu-button {
+    background-color: rgb(205, 133, 63); /* Cam đất */
+    color: white;
+    padding: 30px 40px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.9em;
+    cursor: pointer;
+    margin: 10px;
+    transition: background-color 0.3s ease, transform 0.2s;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    width: 200px; /* Thêm chiều rộng cố định cho các nút */
+}
+
+/* Hiệu ứng khi rê chuột qua nút */
+.menu-button:hover {
+    background-color: rgb(160, 82, 45); 
+    transform: scale(1.05);
+}
+
+/* Container chính của game */
+.game-container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: rgb(202, 214, 179); /* Tan */
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Lưới trò chơi */
+#board {
+    display: grid;
+    grid-template-columns: repeat(4, 90px); /* Kích thước ô nhỏ hơn */
+    grid-gap: 10px;
+    margin: 20px auto;
+}
+
+/* Tile (ô vuông) trong trò chơi */
+.tile {
+    width: 90px;
+    height: 90px;
+    background-color: rgb(244, 164, 96); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    color: rgb(95, 0, 102); 
+    border-radius: 5px;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s;
+}
+
+.tile:hover {
+    transform: scale(1.05);
+}
+
+/* Màu sắc cho các ô */
+.tile-2 { background-color: #ffeb99; }       /* Vàng sáng */
+.tile-4 { background-color: #ffcc66; }       /* Cam pastel */
+.tile-8 { background: linear-gradient(45deg, #ff9966, #ff5e62); } /* Cam gradient */
+.tile-16 { background: linear-gradient(45deg, #ff6e7f, #bfe9ff); } /* Hồng gradient */
+.tile-32 { background: linear-gradient(45deg, #ff758c, #ff7eb3); } /* Hồng neon */
+.tile-64 { background: linear-gradient(45deg, #fc00ff, #00dbde); } /* Tím xanh neon */
+.tile-128 { background: linear-gradient(45deg, #8e44ad, #3498db); } /* Tím xanh gradient */
+.tile-256 { background: linear-gradient(45deg, #6a11cb, #2575fc); } /* Tím dương đậm */
+.tile-512 { background: linear-gradient(45deg, #1d2b64, #f8cdda); } /* Tím dương nhẹ */
+.tile-1024 { background: linear-gradient(45deg, #f953c6, #b91d73); } /* Tím hồng gradient */
+.tile-2048 { background: linear-gradient(45deg, #ff9a9e, #fecfef); } /* Hồng pastel */
+.tile-4096 { background: linear-gradient(45deg, #fc466b, #3f5efb); } /* Đỏ xanh neon */
+/* Điểm số */
+#score, #highScore {
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: rgb(102, 51, 0); /* Nâu đậm */
+}
+
+/* Tin nhắn khi kết thúc game */
+#gameOverMessage {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: rgb(210, 180, 140); /* Tan */
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#gameOverMessage p {
+    margin: 10px 0;
+}
+
+/* Nút trong game */
+#newGame, #backToMenu {
+    background-color: rgb(205, 133, 63); /* Cam đất */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    margin: 10px;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+#newGame:hover, #backToMenu:hover {
+    background-color: rgb(160, 82, 45); /* Sienna */
+    transform: scale(1.05);
+}
+
+/* Nhập tên người dùng */
+.username-container {
+    display: none; /* Ẩn phần tử khi chưa cần hiển thị */
+    padding: 20px;
+    background-color: rgb(210, 180, 140); /* Tan */
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 280px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.username-input {
+    padding: 10px;
+    width: 80%;
+    border: 1px solid rgb(205, 133, 63); /* Cam đất */
+    border-radius: 5px;
+    font-size: 1em;
+    margin-bottom: 15px;
+}
